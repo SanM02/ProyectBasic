@@ -3,6 +3,9 @@ package com.example.seguridad.Persistence.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Setter
 @Getter
 @Builder
@@ -19,4 +22,9 @@ public class RoleEntity {
     @Column(name = "role_name")
     @Enumerated(EnumType.STRING)
     private RoleEmun roleEnum;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"),
+            inverseJoinColumns = @JoinColumn(name = "permission_id"))
+    private Set<PermissionEntity> permissionList = new HashSet<>();
 }
