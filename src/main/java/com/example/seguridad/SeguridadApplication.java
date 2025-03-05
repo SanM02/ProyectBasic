@@ -100,7 +100,7 @@ public class SeguridadApplication {
 					.roles(Set.of(roleInvited))
 					.build();
 
-			UserEntity UserMartinetti = UserEntity.builder()
+			UserEntity userMartinetti = UserEntity.builder()
 					.username("martinetti")
 					.password("1234")
 					.isEnabled(true)
@@ -110,7 +110,7 @@ public class SeguridadApplication {
 					.roles(Set.of(roleDeveloper))
 					.build();
 
-			userRepository.saveAll(List.of(userSantiago, userMiranda, userNicolas, UserMartinetti));
+			userRepository.saveAll(List.of(userSantiago, userMiranda, userNicolas, userMartinetti));
 		};
 	}
 
