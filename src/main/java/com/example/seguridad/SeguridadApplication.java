@@ -113,5 +113,4 @@ public class SeguridadApplication {
 			userRepository.saveAll(List.of(userSantiago, userMiranda, userNicolas, userMartinetti));
 		};
 	}
-
 }
