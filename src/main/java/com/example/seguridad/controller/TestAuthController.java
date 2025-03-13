@@ -27,4 +27,31 @@ public class TestAuthController {
     public String helloSeguro2() {
         return "Hello esta seguro2";
     }
+
+    @GetMapping("/get")
+    @PreAuthorize("hasAuthority('READ')")
+    public String get() {
+        return "GET";
+    }
+
+    @GetMapping("/post")
+    public String post() {
+        return "POST";
+    }
+
+    @GetMapping("/put")
+    public String put() {
+        return "PUT";
+    }
+
+    @GetMapping("/delete")
+    public String delete() {
+        return "DELETE";
+    }
+
+    @GetMapping("/patch")
+    @PreAuthorize("hasAuthority('REFACTOR')")
+    public String patch() {
+        return "PATCH";
+    }
 }
