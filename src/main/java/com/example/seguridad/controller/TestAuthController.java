@@ -33,7 +33,7 @@ public class TestAuthController {
     }
 
     @PostMapping("/post")
-    @PreAuthorize("hasAuthority('CREATE')")
+    @PreAuthorize("hasAuthority('CREATE') or hasAuthority('READ')")
     public String post() {
         return "POST";
     }
