@@ -1,9 +1,7 @@
 package com.example.seguridad.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/auth")
@@ -34,22 +32,22 @@ public class TestAuthController {
         return "GET";
     }
 
-    @GetMapping("/post")
+    @PostMapping("/post")
     public String post() {
         return "POST";
     }
 
-    @GetMapping("/put")
+    @PutMapping("/put")
     public String put() {
         return "PUT";
     }
 
-    @GetMapping("/delete")
+    @DeleteMapping("/delete")
     public String delete() {
         return "DELETE";
     }
 
-    @GetMapping("/patch")
+    @PatchMapping("/patch")
     @PreAuthorize("hasAuthority('REFACTOR')")
     public String patch() {
         return "PATCH";
