@@ -41,5 +41,6 @@ public class UserDetailsServiceimpl implements UserDetailsService {
                 userEntity.isCredentialsNoExpired(),
                 userEntity.isAccountNonLocked(),
                 authorityList);
+
     }
 }
